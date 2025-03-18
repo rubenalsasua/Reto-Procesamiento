@@ -1,0 +1,13 @@
+services:
+  fastapi:
+    build: .
+    container_name: api_parque_eolico
+    ports:
+      - "8000:8000"
+
+  generadores:
+    build: .
+    container_name: generadores
+    command: python app/generator.py
+    depends_on:
+      - fastapi

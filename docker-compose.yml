@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - mongodb_data:/data/db
+
+  validacion:
+    build: ./validacion
+    container_name: fastapi
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://admin:admin@mongodb:27017
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  generador:
+    build: ./generador
+    container_name: generador
+    restart: always
+    depends_on:
+      - validacion
+    environment:
+      API_URL: http://validacion:8000/datos/
+    command: ["python", "generador.py"]
+
+  procesamiento:
+    build: ./procesamiento
+    container_name: procesamiento
+    restart: always
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://admin:admin@mongodb:27017
+    command: ["python", "procesador.py"]
+
+  visualizacion:
+    image: grafana/grafana
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  mongodb_data:
+  grafana_data:
