@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mongodb:
     image: mongo
-    container_name: mongodb
+    container_name: Mongodb
     restart: always
     ports:
       - "27017:27017"
@@ -14,8 +14,8 @@ services:
       - mongodb_data:/data/db
 
   validacion:
-    build: ./validacion
-    container_name: fastapi
+    build: ./Validacion
+    container_name: Validacion
     restart: always
     ports:
       - "8000:8000"
@@ -26,18 +26,18 @@ services:
     command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
   generador:
-    build: ./generador
-    container_name: generador
+    build: ./Generador
+    container_name: Generador
     restart: always
     depends_on:
-      - validacion
+      - Validacion
     environment:
       API_URL: http://validacion:8000/datos/
     command: ["python", "generador.py"]
 
   procesamiento:
-    build: ./procesamiento
-    container_name: procesamiento
+    build: ./Procesamiento
+    container_name: Procesamiento
     restart: always
     depends_on:
       - mongodb
@@ -47,7 +47,7 @@ services:
 
   visualizacion:
     image: grafana/grafana
-    container_name: grafana
+    container_name: Grafana
     restart: always
     ports:
       - "3000:3000"
