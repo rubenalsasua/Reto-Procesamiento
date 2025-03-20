@@ -28,7 +28,7 @@ services:
     container_name: Generador
     restart: always
     depends_on:
-      - Validacion
+      - validacion
     environment:
       API_URL: http://validacion:8000/datos/
     command: ["python", "generador.py"]
