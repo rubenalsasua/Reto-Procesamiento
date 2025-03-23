@@ -47,10 +47,12 @@
     Para conectar la base de datos a la aplicación MongoDBCompass, es necesario utiliza el siguiente comando: mongodb://admin:admin@127.18.0.2:27017/parque_eolico?authSource=admin
    
    Posibles vías de mejora:
+   
      - Utilizar alguna interfaz de visualizacion de datos a tiempo real, para visualizar de forma más clara los datos.
      - Implementación de autentificación y seguridad. 
      
    Problemas encontrados:
+   
      - Se decició utilizar Grafana como intefaz de visualizacion de datos a tiempo real, pero no pudo llegar a ser implenentado, debido a diversos imprvistos a la hora de 
        conectar la db con la interfaz. 
      - Problemas con la integración de MongoDB como base de datos, debido a un error que salía en el conexionado de Docker y MongoDB. 
