@@ -13,7 +13,7 @@
 
     Para poder desarrollar el proyecto se han seguido los siguientes pasos: 
 
-      1. Para empezar, se instalaron las configuraciones iniciales incluyéndelas en los archivos requirements.txt
+      1. Para empezar, se instalaron las configuraciones iniciales incluyéndolas en los archivos requirements.txt
          
       2. Se realizaron las configuraciones necesarias y se levantaron los difernetes contenedores: generador, procesamiento, 
         validación y visualizacion. Se levantaron usando Docker
@@ -48,16 +48,20 @@
    
    Posibles vías de mejora:
    
-     - Utilizar alguna interfaz de visualizacion de datos a tiempo real, para visualizar de forma más clara los datos.
-     - Implementación de autentificación y seguridad. 
+- Implementar monitorización en tiempo real de los servicios mediante logs y métricas, sin utilizar interfaces gráficas.
+- Implementación de autentificación y seguridad. 
      
    Problemas encontrados:
    
-     - Se decició utilizar Grafana como intefaz de visualizacion de datos a tiempo real, pero no pudo llegar a ser implenentado, debido a diversos imprvistos a la hora de 
-       conectar la db con la interfaz. 
-     - Problemas con la integración de MongoDB como base de datos, debido a un error que salía en el conexionado de Docker y MongoDB. 
+- Se decició utilizar una solución alternativa para monitorización en tiempo real, pero no pudo implementarse correctamente debido a imprevistos en la conexión con la base de datos.
+- Problemas con la integración de MongoDB como base de datos, debido a un error que salía en el conexionado de Docker y MongoDB. 
 
     Alternativas posibles:
     
-       
-    
+- Emplear Prometheus para recolectar métricas y Alertmanager para gestionar alertas.
+- Evaluar el uso de bases de datos relacionales, como PostgreSQL, para mejorar la robustez y la comunicación entre contenedores.
+- Implementar autenticación basada en JWT y aplicar políticas de seguridad adicionales.
+- Revisar y optimizar la configuración de red de Docker para mejorar la conexión a la base de datos.
+
+
+
