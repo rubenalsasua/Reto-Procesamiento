@@ -5,7 +5,7 @@ Miembros del equipo:
 - Ruben Alsasua
 - Eneko Saez
 
-Enlace a GitHub: https://github.com/ManelDiaz/RetoCaptaci-n
+Enlace a GitHub: https://github.com/rubenalsasua/Reto-Procesamiento
 
 Pasos seguidos:
 1. Para empezar, se instalaron las configuraciones iniciales incluyéndolas en los archivos requirements.txt.
@@ -42,7 +42,7 @@ Alternativas posibles:
 - Emplear Prometheus para recolectar métricas y Alertmanager para gestionar alertas.
 - Evaluar el uso de bases de datos relacionales, como PostgreSQL, para mejorar la robustez y la comunicación entre contenedores.
 - Implementar autenticación basada en JWT y aplicar políticas de seguridad adicionales.
-- Revisar y optimizar la configuración de red de Docker para mejorar la conexión a la base de datos.
+- Utilizar Grafana para visualizar mejor los datos.
 
 
 
