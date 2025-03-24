@@ -26,7 +26,8 @@ Instrucciones de uso:
   2. `use admin`
   3. `db.auth("admin", "admin")`
   4. `use parque_eolico`
-  5. `db.datos_generadores.find().pretty()`
+  5. `db.datos_generadores.find().pretty()` para ver los datos generados por los generadores.
+  6. `db.datos_aggregados.find().pretty()` para ver los datos agregados 
 - Conectar la base de datos a MongoDBCompass usando:
   `mongodb://admin:admin@127.18.0.2:27017/parque_eolico?authSource=admin`
 
