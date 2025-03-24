@@ -11,7 +11,9 @@ Pasos seguidos:
 1. Para empezar, se instalaron las configuraciones iniciales incluyéndolas en los archivos requirements.txt.
 2. Se realizaron las configuraciones necesarias y se levantaron los diferentes contenedores: generador, procesamiento, validación y visualización (usando Docker).
 3. Se realizó la configuración en Python de los diferentes servicios: generador, procesamiento y validación.
-4. Se integró la base de datos de MongoDB en los contenedores.
+4. Se integró la base de datos de MongoDB en los contenedores. Para almacenar los datos se creo una base de datos principal llamada parque_eolico y dentro de ella,
+   se crearon 2 colecciones: datos_generadores(almacena todos los datos generados por los generadores) y datos_aggregados (almacena los datos procesados como
+   agregaciones, media de cada metica por minuto). 
 5. En la parte de validación se implementó un código que descartaba aquellos generadores que tuvieran más potencia de 4000.
 6. Se conectó la base de datos MongoDB con la aplicación MongoDBCompass para visualizar los datos de forma más clara.
 
