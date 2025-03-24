@@ -2,8 +2,8 @@
 
 Miembros del equipo:
 - Manel Díaz
-- Ruben Alsasua
-- Eneko Saez
+- Rubén Alsasua
+- Eneko Sáez
 
 Enlace a GitHub: https://github.com/rubenalsasua/Reto-Procesamiento
 
