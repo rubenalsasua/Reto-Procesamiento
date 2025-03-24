@@ -24,7 +24,7 @@ Instrucciones de uso:
 - Acceder a la interfaz de FastAPI en: http://localhost:8000/docs para realizar operaciones GET y POST.
 - Consultar la media de potencia en: http://localhost:8000/media_produccion/.
 - Visualizar la base de datos de MongoDB ejecutando:
-  1. `docker exec -it mongodb mongosh --quiet`
+  1. `docker exec -it Mongodb mongosh --quiet`
   2. `use admin`
   3. `db.auth("admin", "admin")`
   4. `use parque_eolico`
